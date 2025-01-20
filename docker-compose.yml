@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  ticketing-portal:
+    build: .
+    container_name: ticketing-portal
+    restart: unless-stopped
+    networks:
+      - ticketing
+    depends_on:
+      - nginx-ticketing-portal
+
+  nginx-ticketing-portal:
+    image: nginx:alpine
+    container_name: nginx-ticketing-portal
+    restart: unless-stopped
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/usr/share/nginx/html
+    ports:
+      - "7001:7001"
+    networks:
+      - ticketing
+
+networks:
+  ticketing:
+    driver: bridge
