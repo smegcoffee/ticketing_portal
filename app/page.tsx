@@ -11,7 +11,7 @@ export default function Home() {
                         <Link href="http://122.52.134.146:4000">
                         <button className="w-60 h-20 text-2xl font-bold bg-blue-500 text-white rounded hover:bg-blue-700">SQL</button>
                         </Link>
-                        <Link href="http://122.52.134.146:7000">
+                        <Link href="https://ticketing-netsuite.smctgroup.ph">
                         <button className="w-60 h-20 text-2xl font-bold text-white rounded bg-[rgb(0,79,127)] hover:bg-sky-700">NetSuite</button>
                         </Link>
                     </div>
